@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
     }
 #endif
     char name[20]; 
-    char temp[20] = "20250";
-    char names_id[20][20]; 
+    char temp[30] = "20250";
+    char names_id[20][30]; 
     int scores[20][4];     
     int N, i = 0;
     scanf("%d", &N);
@@ -28,14 +28,15 @@ int main(int argc, char *argv[])
         int strLength = strlen(temp);
         // strcat str try sprintf to improve
         {
-            temp[strLength] = '0' + (i + 1) / 10;
-            temp[strLength + 1] = '0' + (i + 1) % 10;
+            temp[strLength] = (char)(48 + (i + 1) / 10);
+            temp[strLength + 1] = (char)(48 + (i + 1) % 10);
             temp[strLength + 2] = ':';
             temp[strLength + 3] = '\0';
             strcat(temp, name);
         }
 
-        names_id[i]=strdup(temp);
+        strcpy(names_id[i], temp);
+        temp[5] = '\0'; 
 
         for (int j = 0; j < 3; j++)
         {
@@ -48,9 +49,14 @@ int main(int argc, char *argv[])
     int max_score, min_score;
     int sum;
     int max_i, min_i;
-    for (int i = 0; i <= N; i++)
+    max_score = scores[0][0];
+    min_score = scores[0][0];
+    max_i = 0;
+    min_i = 0;
+    for (int i = 0; i < N; i++)
     {
-        for (int j = 0; j <= 3; j++)
+        sum=0;
+        for (int j = 0; j < 3; j++)
         {
             sum += scores[i][j];
             if (scores[i][j] > max_score)
@@ -76,22 +82,16 @@ int main(int argc, char *argv[])
         average_score[i] = scores[i][3];
     }
 
-    for (int i = 1; i < N - 1; i++) 
+    for (int i = 0; i < N - 1; i++) 
     {
-        bool flag = true;
-        for (int j = 0; j < N - i; j++)
+        for (int j = 0; j < N - i -1; j++)
         {
             if (average_score[j] > average_score[j + 1])
             {
                 int temp = average_score[j];
                 average_score[j] = average_score[j + 1];
                 average_score[j + 1] = temp;
-                flag = false;
             }
-        }
-        if (flag == true)
-        {
-            break;
         }
     }
     for (int i = 0; i < N; i++)
@@ -99,5 +99,5 @@ int main(int argc, char *argv[])
         printf("%d ", average_score[i]);
     }
 
-    exit(0);
+    return 0;
 }
