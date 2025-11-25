@@ -1,4 +1,5 @@
 #include<stdio.h>//头文件
+#include<string.h>
 int main()//主函数
 {
     char arr[1000];//创建字符串
