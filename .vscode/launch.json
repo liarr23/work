@@ -1,41 +1,49 @@
 {
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    // --- C语言调试配置 ---
+    {
+      "name": "调试 C 程序",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Users/liar/Downloads/mingw/bin/gdb.exe",  // 改成你的GDB路径
+      "setupCommands": [
         {
-            "name": "(gdb) 启动",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "将反汇编风格设置为 Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
-        },
-        {
-            "name": "(Windows) 启动",
-            "type": "cppvsdbg",
-            "request": "launch",
-            "program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "console": "externalTerminal"
+          "description": "启用美观打印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ],
-    "version": "2.0.0"
+      ],
+      "preLaunchTask": "build C"  // 关联C编译任务
+    },
+    // --- C++调试配置 ---
+    {
+      "name": "调试 C++ 程序",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Users/liar/Downloads/mingw/bin/gdb.exe",  // 同一个GDB即可
+      "setupCommands": [
+        {
+          "description": "启用美观打印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build C++"  // 关联C++编译任务
+    }
+  ]
 }
