@@ -6,229 +6,232 @@
 //定义比较函数
 //=================================================================================
 //按照书名排序***********************************************************
-int compare_books_asc1(const void *a, const void *b) 
+int compare_books_asc1(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按书名 strcmp 比较
     return strcmp(bookA->name, bookB->name);
 }
-int compare_books_desc1(const void *a, const void *b) 
+int compare_books_desc1(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按书名 strcmp 比较
     return strcmp(bookB->name, bookA->name);
 }
 //按照作者排序***********************************************************
-int compare_books_asc2(const void *a, const void *b) 
+int compare_books_asc2(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按作者 strcmp 比较
     return strcmp(bookA->author, bookB->author);
 }
-int compare_books_desc2(const void *a, const void *b) 
+int compare_books_desc2(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按作者 strcmp 比较
     return strcmp(bookB->author, bookA->author);
 }
 //按照图书种类排序******************************************************
-int compare_books_asc3(const void *a, const void *b) 
+int compare_books_asc3(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按书种类 比较
     return bookA->category-bookB->category;
 }
-int compare_books_desc3(const void *a, const void *b) 
+int compare_books_desc3(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按书种类 strcmp 比较
     return bookB->category-bookA->category;
 }
 //按照借阅次数排序******************************************************
-int compare_books_asc4(const void *a, const void *b) 
+int compare_books_asc4(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按借书次数 比较
     return bookA->times-bookB->times;
 }
-int compare_books_desc4(const void *a, const void *b) 
+int compare_books_desc4(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按借书次数 比较
     return bookB->times-bookA->times;
 }
 //按出版日期排序********************************************************
-int compare_books_asc5(const void *a, const void *b) 
+int compare_books_asc5(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按出版日期 比较
     return bookA->publish_date - bookB->publish_date;
 }
-int compare_books_desc5(const void *a, const void *b) 
+int compare_books_desc5(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按出版日期 比较
     return bookB->publish_date - bookA->publish_date;
 }
 //按出版社排序**********************************************************
-int compare_books_asc6(const void *a, const void *b) 
+int compare_books_asc6(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按出版社 strcmp 比较
     return strcmp(bookA->publisher, bookB->publisher);
 }
-int compare_books_desc6(const void *a, const void *b) 
+int compare_books_desc6(const void *a, const void *b)
 {
     // 取出 book* 指针
     book *bookA = *(book **)a;
     book *bookB = *(book **)b;
-    
+
     // 按出版社 strcmp 比较
     return strcmp(bookB->publisher, bookA->publisher);
 }
-int compare_history_username(const void *a, const void *b) 
+int compare_history_username(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return strcmp(histA->username, histB->username);
 }
-int compare_history_borrow_date(const void *a, const void *b) 
+int compare_history_borrow_date(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return histA->borrow_date - histB->borrow_date;
 }
-int compare_history_return_date(const void *a, const void *b) 
+int compare_history_return_date(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return histA->return_date - histB->return_date;
 }
-int compare_history_bookname(const void *a, const void *b) 
+int compare_history_bookname(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return strcmp(histA->bookname, histB->bookname);
 }
-int compare_history_username_desc(const void *a, const void *b) 
+int compare_history_username_desc(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return strcmp(histB->username, histA->username);
 }
-int compare_history_borrow_date_desc(const void *a, const void *b) 
+int compare_history_borrow_date_desc(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return histB->borrow_date - histA->borrow_date;
 }
-int compare_history_return_date_desc(const void *a, const void *b) 
+int compare_history_return_date_desc(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return histB->return_date - histA->return_date;
 }
-int compare_history_bookname_desc(const void *a, const void *b) 
+int compare_history_bookname_desc(const void *a, const void *b)
 {
     history *histA = *(history **)a;
     history *histB = *(history **)b;
-    
+
     return strcmp(histB->bookname, histA->bookname);
 }
 //=================================================================================
     //修改类别
     //==============================================================================
-    void change_user_category(user *head,const char* name,int target)//修改用户分类
+    void change_user_category(user *head,const char* name,int new_category)//修改用户分类
     {
         user *curr=head;
-        while (curr != NULL) 
+        while (curr != NULL)
         {
-        if (strcmp(curr->username, name) == 0) 
+        if (strcmp(curr->username, name) == 0)
         {
-            curr->usertype = target;
+            curr->usertype = new_category;
             printf("修改成功\n");
             return;
         }
         curr = curr->next;
         }
+        printf("未找到该用户\n");
     }
-    void change_book_category(book *head,char* name,int target)
+    void change_book_category(book *head,char* isbn,int new_category)
     {
         book *curr=head;
-        while (curr != NULL) 
+        while (curr != NULL)
         {
-        if (strcmp(curr->name, name) == 0) 
+        if (strcmp(curr->isbn, isbn) == 0)
         {
-            curr->category = target;
+            curr->category = new_category;
             printf("修改成功\n");
             return;
         }
         curr = curr->next;
         }
+        printf("未找到该图书\n");
     }
-    void change_book_deadline(int *list,int category,int target)
+    void change_book_deadline(int *list,int category,int new_deadline)
     {
-        list[category]=target;
+        list[category]=new_deadline;
     }
-    void change_user_max_borrow(int *list,int category,int target)
+    void change_user_max_borrow(int *list,int category,int new_max_borrow)
     {
-        list[category]=target;
+        list[category]=new_max_borrow;
     }
 //增加图书记录
     void add_book(book **headref)
     {
         book *new_book = (book *)malloc(sizeof(book));
-        if (new_book == NULL) 
+        if (new_book == NULL)
         {
             fprintf(stderr, "内存分配失败\n");
             return;
         }
         printf("请输入书名：");
         scanf("%s", new_book->name);
-        printf("请输入ISBN：");
+        printf("请输入ISBN:");
         scanf("%s", new_book->isbn);
         printf("请输入作者：");
         scanf("%s", new_book->author);
+        printf("图书分类:\n0:人文社科类\n1:自然科学类\n2:工程技术类\n3:医药卫生类\n4:综合图书类\n");
         printf("请输入图书种类（整数）：");
         scanf("%d", &new_book->category);
         printf("请输入出版日期（整数）：");
@@ -246,7 +249,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按书名排序************************************************************
     void sort_book_by_name(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -254,7 +257,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -262,7 +265,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 2. 动态分配指针数组
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -270,7 +273,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -285,7 +288,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc1);
     }
      // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -300,7 +303,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按作者排序************************************************************
     void sort_book_by_author(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -308,7 +311,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -317,7 +320,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 2. 动态分配指针数组
     // 数组里存的是 book* (节点的地址)
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -325,7 +328,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -340,7 +343,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc2);
     }
       // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -355,7 +358,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按种类排序****************************************************************
     void sort_book_by_category(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -363,7 +366,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -372,7 +375,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 2. 动态分配指针数组
     // 数组里存的是 book* (节点的地址)
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -380,7 +383,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -395,7 +398,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc3);
     }
       // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -410,7 +413,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按借阅次数排列************************************************************
     void sort_book_by_times(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -418,7 +421,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -427,7 +430,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 2. 动态分配指针数组
     // 数组里存的是 book* (节点的地址)
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -435,7 +438,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -450,7 +453,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc4);
     }
       // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -465,7 +468,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按出版日期排列************************************************************
     void sort_book_by_publish_date(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -473,7 +476,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -482,7 +485,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 2. 动态分配指针数组
     // 数组里存的是 book* (节点的地址)
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -490,7 +493,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -505,7 +508,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc5);
     }
       // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -520,7 +523,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     //按出版社排序*****************************************************************
     void sort_book_by_publisher(book **headref,int turn)
     {
-        if (headref == NULL || *headref == NULL) 
+        if (headref == NULL || *headref == NULL)
         {
         return; // 空链表直接返回
         }
@@ -528,7 +531,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 1. 统计链表长度
     int count = 0;
     book *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -537,7 +540,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     // 2. 动态分配指针数组
     // 数组里存的是 book* (节点的地址)
     book **arr = (book **)malloc(count * sizeof(book *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -545,7 +548,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -560,7 +563,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
         qsort(arr, count, sizeof(book *), compare_books_desc6);
     }
       // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -573,7 +576,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
     free(arr);
     }
         //多条件排序——————————————————————————————————————————————————————————————————————————
-    
+
     /* ========================================================================== */
     /* 新增：多条件比较函数                                                       */
     /* ========================================================================== */
@@ -598,7 +601,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
         // 第一优先级：借阅次数 (times) - 降序 (热门的排前面)
         if (bookA->times != bookB->times) {
-            return bookB->times - bookA->times; 
+            return bookB->times - bookA->times;
         }
         // 第二优先级：出版日期 (publish_date) - 升序 (旧书排前面，若要新书优先请交换 A/B)
         return bookA->publish_date - bookB->publish_date;
@@ -651,17 +654,18 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
         // 4. 用户选择排序模式
         int mode;
-        printf("\n=== 多条件排序选项 ===\n");
-        printf("1. [热门分类] 先按分类升序 -> 再按书名升序\n");
-        printf("2. [热门推荐] 先按借阅次数降序 -> 再按出版日期升序\n");
-        printf("3. [作者合集] 先按作者升序 -> 再按出版社升序\n");
+        printf(" ================== 多条件排序选项 ==================\n");
+        printf("||1. [热门分类] 先按分类升序 -> 再按书名升序         ||\n");
+        printf("||2. [热门推荐] 先按借阅次数降序 -> 再按出版日期升序 ||\n");
+        printf("||3. [作者合集] 先按作者升序 -> 再按出版社升序       ||\n");
+        printf(" ===================================================\n");
         printf("请输入选项 (1-3): ");
-        
+
         // 防止输入错误导致死循环
         if (scanf("%d", &mode) != 1) {
             printf("输入无效，取消排序。\n");
             // 清除缓冲区
-            while(getchar() != '\n'); 
+            while(getchar() != '\n');
             free(arr);
             return;
         }
@@ -697,18 +701,17 @@ int compare_history_bookname_desc(const void *a, const void *b)
 
         // 8. 释放辅助数组
         free(arr);
-        
-        printf(" 排序操作结束！请使用显示功能查看结果。\n");
     }
     //排序封装——————————————————————————————————————————————————————————————————————————————————————————————————————————————
     void sort_book(book **head)
     {
         int mode;
-        printf("===排序方式===\n");
-        printf("0.单一条件排序\n");
-        printf("1.多条件排序\n");
+        printf("  ====排序方式=====\n");
+        printf("||0.单一条件排序 ||\n");
+        printf("||1.多条件排序   ||\n");
+        printf("  =================\n");
         printf("请输入:\n");
-        if (scanf("%d", &mode) != 1) 
+        if (scanf("%d", &mode) != 1)
         {
             printf("输入无效，取消排序\n");
             while(getchar() != '\n');
@@ -716,13 +719,14 @@ int compare_history_bookname_desc(const void *a, const void *b)
         }
         if(mode==0)
         {
-            printf("===单一排序类型===\n");
-            printf("1.按书名顺序排序\n");
-            printf("2.按作者顺序排序\n");
-            printf("3.按书类型顺序排序\n");
-            printf("4.按被借阅次数顺序排序\n");
-            printf("5.按出版时间顺序排序\n");
-            printf("6.按出版社顺序\n");
+            printf(" ======单一排序类型=======\n");
+            printf("||1.按书名顺序排序       ||\n");
+            printf("||2.按作者顺序排序       ||\n");
+            printf("||3.按书类型顺序排序     ||\n");
+            printf("||4.按被借阅次数顺序排序 ||\n");
+            printf("||5.按出版时间顺序排序   ||\n");
+            printf("||6.按出版社顺序         ||\n");
+            printf(" ========================\n");
             printf("请输入排序顺序:\n");
             int mode1;
             scanf("%d",&mode1);
@@ -733,9 +737,10 @@ int compare_history_bookname_desc(const void *a, const void *b)
                 return;
             }
             int turn;
-            printf("===排序升降序===\n");
-            printf("1.升序\n");
-            printf("0.降序\n");
+            printf(" ====排序升降序====\n");
+            printf("||    1.升序      ||\n");
+            printf("||    0.降序      ||\n");
+            printf(" ==================\n");
             printf("请输入:\n");
             scanf("%d",&turn);
             if(turn!=0&&turn!=1)
@@ -768,7 +773,6 @@ int compare_history_bookname_desc(const void *a, const void *b)
             {
                 sort_book_by_publisher(head,turn);
             }
-            printf(" 排序操作结束！请使用显示功能查看结果\n");
         }
         if(mode==1)
         {
@@ -778,7 +782,7 @@ int compare_history_bookname_desc(const void *a, const void *b)
 //历史记录排序=====================================================================================================================================================
 void sort_history_by_username(history **headref,int turn)
 {
-    if (headref == NULL || *headref == NULL) 
+    if (headref == NULL || *headref == NULL)
     {
         return; // 空链表直接返回
     }
@@ -786,7 +790,7 @@ void sort_history_by_username(history **headref,int turn)
     // 1. 统计链表长度
     int count = 0;
     history *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -794,7 +798,7 @@ void sort_history_by_username(history **headref,int turn)
 
     // 2. 动态分配指针数组
     history **arr = (history **)malloc(count * sizeof(history *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -802,7 +806,7 @@ void sort_history_by_username(history **headref,int turn)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -817,7 +821,7 @@ void sort_history_by_username(history **headref,int turn)
         qsort(arr, count, sizeof(history *), compare_history_username_desc);
     }
      // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -832,7 +836,7 @@ void sort_history_by_username(history **headref,int turn)
 //按借阅日期排序***********************************************************************************
 void sort_history_by_borrow_date(history **headref,int turn)
 {
-    if (headref == NULL || *headref == NULL) 
+    if (headref == NULL || *headref == NULL)
     {
         return; // 空链表直接返回
     }
@@ -840,7 +844,7 @@ void sort_history_by_borrow_date(history **headref,int turn)
     // 1. 统计链表长度
     int count = 0;
     history *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -848,7 +852,7 @@ void sort_history_by_borrow_date(history **headref,int turn)
 
     // 2. 动态分配指针数组
     history **arr = (history **)malloc(count * sizeof(history *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -856,7 +860,7 @@ void sort_history_by_borrow_date(history **headref,int turn)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -871,7 +875,7 @@ void sort_history_by_borrow_date(history **headref,int turn)
         qsort(arr, count, sizeof(history *), compare_history_borrow_date_desc);
     }
      // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -886,7 +890,7 @@ void sort_history_by_borrow_date(history **headref,int turn)
 //按归还日期排序***********************************************************************************
 void sort_history_by_return_date(history **headref,int turn)
 {
-    if (headref == NULL || *headref == NULL) 
+    if (headref == NULL || *headref == NULL)
     {
         return; // 空链表直接返回
     }
@@ -894,7 +898,7 @@ void sort_history_by_return_date(history **headref,int turn)
     // 1. 统计链表长度
     int count = 0;
     history *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -902,7 +906,7 @@ void sort_history_by_return_date(history **headref,int turn)
 
     // 2. 动态分配指针数组
     history **arr = (history **)malloc(count * sizeof(history *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -910,7 +914,7 @@ void sort_history_by_return_date(history **headref,int turn)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -925,7 +929,7 @@ void sort_history_by_return_date(history **headref,int turn)
         qsort(arr, count, sizeof(history *), compare_history_return_date_desc);
     }
      // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -940,7 +944,7 @@ void sort_history_by_return_date(history **headref,int turn)
 //按书名排序***********************************************************************************
 void sort_history_by_bookname(history **headref,int turn)
 {
-    if (headref == NULL || *headref == NULL) 
+    if (headref == NULL || *headref == NULL)
     {
         return; // 空链表直接返回
     }
@@ -948,7 +952,7 @@ void sort_history_by_bookname(history **headref,int turn)
     // 1. 统计链表长度
     int count = 0;
     history *current = *headref;
-    while (current != NULL) 
+    while (current != NULL)
     {
         count++;
         current = current->next;
@@ -956,7 +960,7 @@ void sort_history_by_bookname(history **headref,int turn)
 
     // 2. 动态分配指针数组
     history **arr = (history **)malloc(count * sizeof(history *));
-    if (arr == NULL) 
+    if (arr == NULL)
     {
         fprintf(stderr, "内存分配失败\n");
         return;
@@ -964,7 +968,7 @@ void sort_history_by_bookname(history **headref,int turn)
 
     // 3. 将链表节点地址填入数组
     current = *headref;
-    for (int i = 0; i < count; i++) 
+    for (int i = 0; i < count; i++)
     {
         arr[i] = current;
         current = current->next;
@@ -979,7 +983,7 @@ void sort_history_by_bookname(history **headref,int turn)
         qsort(arr, count, sizeof(history *), compare_history_bookname_desc);
     }
      // 5. 根据排序后的数组重建链表
-    for (int i = 0; i < count - 1; i++) 
+    for (int i = 0; i < count - 1; i++)
     {
         arr[i]->next = arr[i + 1]; // 当前节点指向下一个节点
     }
@@ -995,13 +999,14 @@ void sort_history_by_bookname(history **headref,int turn)
 void sort_history(history **head)
 {
     int mode;
-    printf("===排序方式===\n");
-    printf("1.按用户名排序\n");
-    printf("2.按借阅日期排序\n");
-    printf("3.按归还日期排序\n");
-    printf("4.按书名排序\n");
+    printf(" =====排序方式=====\n");
+    printf("||1.按用户名排序  ||\n");
+    printf("||2.按借阅日期排序||\n");
+    printf("||3.按归还日期排序||\n");
+    printf("||4.按书名排序    ||\n");
+    printf(" =================\n");
     printf("请输入:\n");
-    if (scanf("%d", &mode) != 1) 
+    if (scanf("%d", &mode) != 1)
     {
         printf("输入无效，取消排序\n");
         while(getchar() != '\n');
@@ -1014,9 +1019,10 @@ void sort_history(history **head)
         return;
     }
     int turn;
-    printf("===排序升降序===\n");
-    printf("1.升序\n");
-    printf("0.降序\n");
+    printf(" ====排序升降序====\n");
+    printf("||    1.升序      ||\n");
+    printf("||    0.降序      ||\n");
+    printf(" =================\n");
     printf("请输入:\n");
     scanf("%d",&turn);
     if(turn!=0&&turn!=1)
@@ -1047,17 +1053,19 @@ void find_history_by_username(history *head,const char* name)
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
-        if (strcmp(curr->username, name) == 0) 
+        if (strcmp(curr->username, name) == 0)
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到用户 '%s' 的借阅记录。\n", name);
     }
 }
@@ -1066,17 +1074,19 @@ void find_history_by_bookname(history *head,const char* name)
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
-        if (strcmp(curr->bookname, name) == 0) 
+        if (strcmp(curr->bookname, name) == 0)
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到书名 '%s' 的借阅记录。\n", name);
     }
 }
@@ -1085,17 +1095,19 @@ void find_history_by_borrow_date(history *head,int date)
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
-        if (curr->borrow_date == date) 
+        if (curr->borrow_date == date)
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到借阅日期为 '%d' 的借阅记录。\n", date);
     }
 }
@@ -1104,17 +1116,19 @@ void find_history_by_return_date(history *head,int date)
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
-        if (curr->return_date == date) 
+        if (curr->return_date == date)
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到归还日期为 '%d' 的借阅记录。\n", date);
     }
 }
@@ -1123,17 +1137,19 @@ void find_history_by_period(history *head,int start_date,int end_date)
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
-        if (curr->borrow_date >= start_date && curr->borrow_date <= end_date) 
+        if (curr->borrow_date >= start_date && curr->borrow_date <= end_date)
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到借阅日期在 '%d' 到 '%d' 之间的借阅记录。\n", start_date, end_date);
     }
 }
@@ -1142,21 +1158,23 @@ void find_history_combine(history *head,const char* username,const char* booknam
 {
     history *curr=head;
     int found=0;
-    while (curr != NULL) 
+    while (curr != NULL)
     {
         if ((username == NULL || strcmp(curr->username, username) == 0) &&
             (bookname == NULL || strcmp(curr->bookname, bookname) == 0) &&
             (borrow_date == -1 || curr->borrow_date == borrow_date) &&
             (return_date == -1 || curr->return_date == return_date) &&
-            (start_date == -1 || end_date == -1 || (curr->borrow_date >= start_date && curr->borrow_date <= end_date))) 
+            (start_date == -1 || end_date == -1 || (curr->borrow_date >= start_date && curr->borrow_date <= end_date)))
         {
-            printf("用户名: %s | 书名: %s | 借阅日期: %d | 归还日期: %d\n", 
+            printf("——————————————————————————————————————————————————————————————————————————————\n");
+            printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
                    curr->username, curr->bookname, curr->borrow_date, curr->return_date);
             found = 1;
         }
         curr = curr->next;
     }
     if (!found) {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
         printf("未找到符合条件的借阅记录。\n");
     }
 }
@@ -1164,15 +1182,16 @@ void find_history_combine(history *head,const char* username,const char* booknam
 void find_history(history *head)
 {
     int mode;
-    printf("===查询方式===\n");
-    printf("1.按用户名查询\n");
-    printf("2.按书名查询\n");
-    printf("3.按借阅日期查询\n");
-    printf("4.按归还日期查询\n");
-    printf("5.按借阅日期区间查询\n");
-    printf("6.组合查询\n");
+    printf(" =======查询方式=======\n");
+    printf("||1.按用户名查询      ||\n");
+    printf("||2.按书名查询        ||\n");
+    printf("||3.按借阅日期查询    ||\n");
+    printf("||4.按归还日期查询    ||\n");
+    printf("||5.按借阅日期区间查询||\n");
+    printf("||6.组合查询          ||\n");
+    printf(" =====================\n");
     printf("请输入:\n");
-    if (scanf("%d", &mode) != 1) 
+    if (scanf("%d", &mode) != 1)
     {
         printf("输入无效，取消查询\n");
         while(getchar() != '\n');
@@ -1262,5 +1281,907 @@ void find_history(history *head)
             end_date=-1;
         }
         find_history_combine(head,username,bookname,borrow_date,return_date,start_date,end_date);
+    }
+}
+//删除图书=====================================================================================================================================================
+void delete_book_by_name(book **headref,const char* name)
+{
+    book *curr = *headref;
+    book *prev = NULL;
+    int found = 0;
+
+    while (curr != NULL)
+    {
+        if (strcmp(curr->name, name) == 0)
+        {
+            found = 1;
+            if (prev == NULL)
+            {
+                // 删除头节点
+                *headref = curr->next;
+            } else
+            {
+                // 删除中间或尾节点
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("已删除书名为 '%s' 的图书。\n", name);
+            return; // 删除后退出函数
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    if (!found)
+    {
+        printf("未找到书名为 '%s' 的图书，无法删除。\n", name);
+    }
+}
+//按作者删除***********************************************************************************
+void delete_book_by_author(book **headref,const char* author)
+{
+    book *curr = *headref;
+    book *prev = NULL;
+    int found = 0;
+
+    while (curr != NULL)
+    {
+        if (strcmp(curr->author, author) == 0)
+        {
+            found = 1;
+            if (prev == NULL)
+            {
+                // 删除头节点
+                *headref = curr->next;
+            } else
+            {
+                // 删除中间或尾节点
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("已删除作者为 '%s' 的图书。\n", author);
+            return; // 删除后退出函数
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    if (!found)
+    {
+        printf("未找到作者为 '%s' 的图书，无法删除。\n", author);
+    }
+}
+//按分类删除***********************************************************************************
+void delete_book_by_category(book **headref,int category)
+{
+    book *curr = *headref;
+    book *prev = NULL;
+    int found = 0;
+
+    while (curr != NULL)
+    {
+        if (curr->category == category)
+        {
+            found = 1;
+            if (prev == NULL)
+            {
+                // 删除头节点
+                *headref = curr->next;
+            } else
+            {
+                // 删除中间或尾节点
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("已删除分类为 '%d' 的图书。\n", category);
+            return; // 删除后退出函数
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    if (!found)
+    {
+        printf("未找到分类为 '%d' 的图书，无法删除。\n", category);
+    }
+}
+//按被借阅次数删除***********************************************************************************
+void delete_book_by_times(book **headref,int times)
+{
+    book *curr = *headref;
+    book *prev = NULL;
+    int found = 0;
+
+    while (curr != NULL)
+    {
+        if (curr->times == times)
+        {
+            found = 1;
+            if (prev == NULL)
+            {
+                // 删除头节点
+                *headref = curr->next;
+            } else
+            {
+                // 删除中间或尾节点
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("已删除被借阅次数为 '%d' 的图书。\n", times);
+            return; // 删除后退出函数
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    if (!found)
+    {
+        printf("未找到被借阅次数为 '%d' 的图书，无法删除。\n", times);
+    }
+}
+//按出版社删除***********************************************************************************
+void delete_book_by_publisher(book **headref,const char* publisher)
+{
+    book *curr = *headref;
+    book *prev = NULL;
+    int found = 0;
+
+    while (curr != NULL)
+    {
+        if (strcmp(curr->publisher, publisher) == 0)
+        {
+            found = 1;
+            if (prev == NULL)
+            {
+                // 删除头节点
+                *headref = curr->next;
+            } else
+            {
+                // 删除中间或尾节点
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("已删除出版社为 '%s' 的图书。\n", publisher);
+            return; // 删除后退出函数
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    if (!found)
+    {
+        printf("未找到出版社为 '%s' 的图书，无法删除。\n", publisher);
+    }
+}
+//删除图书封装***********************************************************************************
+void delete_book(book **headref)
+{
+    int mode;
+    printf(" =====删除方式======\n");
+    printf("||1.按书名删除      ||\n");
+    printf("||2.按作者删除      ||\n");
+    printf("||3.按分类删除      ||\n");
+    printf("||4.按被借阅次数删除||\n");
+    printf("||5.按出版社删除    ||\n");
+    printf(" ==================\n");
+    printf("请输入:\n");
+    if (scanf("%d", &mode) != 1)
+    {
+        printf("输入无效，取消删除\n");
+        while(getchar() != '\n');
+        return;
+    }
+    if(mode<1||mode>5)
+    {
+        printf("输入无效，取消删除\n");
+        while(getchar() != '\n');
+        return;
+    }
+    if(mode==1)
+    {
+        char name[50];
+        printf("请输入书名:\n");
+        scanf("%49s", name);
+        delete_book_by_name(headref,name);
+    }
+    if(mode==2)
+    {
+        char author[50];
+        printf("请输入作者:\n");
+        scanf("%49s", author);
+        delete_book_by_author(headref,author);
+    }
+    if(mode==3)
+    {
+        int category;
+        printf("请输入分类(整数):\n");
+        scanf("%d", &category);
+        delete_book_by_category(headref,category);
+    }
+    if(mode==4)
+    {
+        int times;
+        printf("请输入被借阅次数(整数):\n");
+        scanf("%d", &times);
+        delete_book_by_times(headref,times);
+    }
+    if(mode==5)
+    {
+        char publisher[50];
+        printf("请输入出版社:\n");
+        scanf("%49s", publisher);
+        delete_book_by_publisher(headref,publisher);
+    }
+}
+//计算罚款=====================================================================================================================================================
+void calculate_fine(history *head,const char* username)
+{
+    history *curr=head;
+    int total_fine=0;
+    int found=0;
+    while (curr != NULL)
+    {
+        if (strcmp(curr->username, username) == 0)
+        {
+            found = 1;
+            if (curr->return_date<0&&curr->if_return==0)
+            {
+                int overdue_days = -1*curr->return_date;// 逾期天数为负的归还日期的绝对值
+                int fine = overdue_days * 1; // 每天罚款1单位
+                total_fine += fine;
+                printf("——————————————————————————————————————————————————————————————————————————————\n");
+                printf("|书名: %s\n|借阅日期: %d\n|归还日期: %d\n|逾期天数: %d\n|罚款: %d\n",
+                       curr->bookname, curr->borrow_date, curr->return_date, overdue_days, fine);
+            }
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        printf("未找到用户 '%s' 的借阅记录。\n", username);
+    } else {
+        printf("用户 '%s' 的总罚款金额为: %d\n", username, total_fine);
+    }
+}
+void print_book(book *head)
+{
+    book *curr = head;
+    while (curr != NULL)
+    {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
+        printf("|书名: %s\n|ISBN: %s\n|作者: %s\n|分类: %d\n|被借阅次数: %d\n|出版日期: %d\n|出版社: %s\n",
+               curr->name, curr->isbn, curr->author, curr->category, curr->times, curr->publish_date, curr->publisher);
+        curr = curr->next;
+    }
+}
+void print_history(history *head)
+{
+    history *curr = head;
+    while (curr != NULL)
+    {
+        printf("——————————————————————————————————————————————————————————————————————————————\n");
+        printf("|用户名: %s\n|书名: %s\n|借阅日期: %d\n|归还日期: %d\n",
+               curr->username, curr->bookname, curr->borrow_date, curr->return_date);
+        curr = curr->next;
+    }
+}
+void print_book_num(book *head)
+{
+    int count = 0;
+    book *curr = head;
+    while (curr != NULL)
+    {
+        count++;
+        curr = curr->next;
+    }
+    printf("图书库中共有 %d 本图书。\n", count);
+}
+void print_history_num(history *head)
+{
+    int count = 0;
+    history *curr = head;
+    while (curr != NULL)
+    {
+        count++;
+        curr = curr->next;
+    }
+    printf("历史记录中共有 %d 条记录。\n", count);
+}
+void print_category_num(book *head)
+{
+    sort_book_by_category(&head,1); // 先按分类升序排序，方便统计连续相同分类的数量
+    int count = 0;
+    book *curr = head;
+    while (curr != NULL)
+    {
+        count++;
+        // 跳过连续相同分类的节点
+        while (curr->next != NULL && curr->category == curr->next->category)
+        {
+            curr = curr->next;
+        }
+        curr = curr->next; // 移动到下一个不同分类的节点
+    }
+    printf("图书库中共有 %d 个分类。\n", count);
+}
+void print_author_num(book *head)
+{
+    sort_book_by_author(&head,1); // 先按作者升序排序，方便统计连续相同作者的数量
+    int count = 0;
+    book *curr = head;
+    while (curr != NULL)
+    {
+        count++;
+        // 跳过连续相同作者的节点
+        while (curr->next != NULL && strcmp(curr->author, curr->next->author) == 0)
+        {
+            curr = curr->next;
+        }
+        curr = curr->next; // 移动到下一个不同作者的节点
+    }
+    printf("图书库中共有 %d 个作者。\n", count);
+}
+void print_publisher_num(book *head)
+{
+    sort_book_by_publisher(&head,1); // 先按出版社升序排序，方便统计连续相同出版社的数量
+    int count = 0;
+    book *curr = head;
+    while (curr != NULL)
+    {
+        count++;
+        // 跳过连续相同出版社的节点
+        while (curr->next != NULL && strcmp(curr->publisher, curr->next->publisher) == 0)
+        {
+            curr = curr->next;
+        }
+        curr = curr->next; // 移动到下一个不同出版社的节点
+    }
+    printf("图书库中共有 %d 个出版社。\n", count);
+}
+void print_same_category_books(book *head,int category)
+{
+    book *curr = head;
+    int found = 0;
+    while (curr != NULL)
+    {
+        if (curr->category == category)
+        {
+            found++;
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        if(category==0)
+        {
+        printf("未找到分类为人文社科的图书。\n");
+        }
+        if(category==1)
+        {
+            printf("未找到分类为自然科学的图书。\n");
+        }
+        if(category==2)
+        {
+            printf("未找到分类为工程技术的图书。\n");
+        }
+        if(category==3)
+        {
+            printf("未找到分类为医药卫生的图书。\n");
+        }
+        if(category==4)
+        {
+            printf("未找到分类为综合图书的图书。\n");
+        }
+    }
+    else
+    {
+        if(category==0)
+        {
+        printf("分类为人文社科类的图书共有 %d 本。\n", found);
+        }
+        if(category==1)
+        {
+            printf("分类为自然科学类的图书共有 %d 本。\n", found);
+        }
+        if(category==2)
+        {
+            printf("分类为工程技术类的图书共有 %d 本。\n", found);
+        }
+        if(category==3)
+        {
+            printf("分类为医药卫生类的图书共有 %d 本。\n", found);
+        }
+        if(category==4)
+        {
+            printf("分类为综合图书类的图书共有 %d 本。\n", found);
+        }
+    }
+}
+void print_same_author_books(book *head,const char* author)
+{
+    book *curr = head;
+    int found = 0;
+    while (curr != NULL)
+    {
+        if (strcmp(curr->author, author) == 0)
+        {
+            found++;
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        printf("未找到作者为 '%s' 的图书。\n", author);
+    }
+    else
+    {
+        printf("作者为 '%s' 的图书共有 %d 本。\n", author, found);
+    }
+}
+void print_same_publisher_books(book *head,const char* publisher)
+{
+    book *curr = head;
+    int found = 0;
+    while (curr != NULL)
+    {
+        if (strcmp(curr->publisher, publisher) == 0)
+        {
+            found++;
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        printf("未找到出版社为 '%s' 的图书。\n", publisher);
+    }
+    else
+    {
+        printf("出版社为 '%s' 的图书共有 %d 本。\n", publisher, found);
+    }
+}
+void print_same_times_books(book *head,int times)
+{
+    book *curr = head;
+    int found = 0;
+    while (curr != NULL)
+    {
+        if (curr->times == times)
+        {
+            found++;
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        printf("未找到被借阅次数为 '%d' 的图书。\n", times);
+    }
+    else
+    {
+        printf("被借阅次数为 '%d' 的图书共有 %d 本。\n", times, found);
+    }
+}
+void print_same_name_books(book *head,const char* name)
+{
+    book *curr = head;
+    int found = 0;
+    while (curr != NULL)
+    {
+        if (strcmp(curr->name, name) == 0)
+        {
+            found++;
+        }
+        curr = curr->next;
+    }
+    if (!found) {
+        printf("未找到书名为 '%s' 的图书。\n", name);
+    }
+    else
+    {
+        printf("书名为 '%s' 的图书共有 %d 本。\n", name, found);
+    }
+}
+void print_datas(book *head,history *history_head)
+{
+    int mode;
+    printf(" =====图书库统计信息=======\n");
+    printf("||1.图书总数              ||\n");
+    printf("||2.历史记录总数          || \n");
+    printf("||3.分类总数              ||\n");
+    printf("||4.作者总数              ||\n");
+    printf("||5.出版社总数            ||\n");
+    printf("||6.同分类图书数量        ||\n");
+    printf("||7.同作者图书数量        ||\n");
+    printf("||8.同出版社图书数量      ||\n");
+    printf(" =========================\n");
+    printf("请输入选项:\n");
+    if (scanf("%d", &mode) != 1)
+    {
+        printf("输入无效，取消统计\n");
+        while(getchar() != '\n');
+        return;
+    }
+    if(mode<1||mode>8)
+    {
+        printf("输入无效，取消统计\n");
+        while(getchar() != '\n');
+        return;
+    }
+    if(mode==1)
+    {
+        print_book_num(head);
+    }
+    if(mode==2)
+    {
+        print_history_num(history_head);
+    }
+    if(mode==3)
+    {
+        print_category_num(head);
+    }
+    if(mode==4)
+    {
+        print_author_num(head);
+    }
+    if(mode==5)
+    {
+        print_publisher_num(head);
+    }
+    if(mode==6)
+    {
+        int category;
+        printf("图书分类:\n0:人文社科类\n1:自然科学类\n2:工程技术类\n3:医药卫生类\n4:综合图书类\n");
+        printf("请输入分类(整数):\n");
+        scanf("%d", &category);
+        print_same_category_books(head,category);
+    }
+    if(mode==7)
+    {
+        char author[50];
+        printf("请输入作者:\n");
+        scanf("%49s", author);
+        print_same_author_books(head,author);
+    }
+    if(mode==8)
+    {
+        char publisher[50];
+        printf("请输入出版社:\n");
+        scanf("%49s", publisher);
+        print_same_publisher_books(head,publisher);
+    }
+}
+//其他功能=====================================================================================================================================================
+ //显示所有逾期未还图书
+ void books_overdue(history *head)
+ {
+    history *curr=head;
+    int cnt;
+    while(curr!=NULL)
+    {
+        if(curr->return_date<0&&curr->if_return==0)
+        {
+            cnt++;
+            printf("用户名: %s\n书名: %s\n借阅日期: %d\n",
+                   curr->username, curr->bookname, curr->borrow_date);
+        }
+        curr=curr->next;
+    }
+    printf("逾期未还图书总数: %d\n", cnt);
+ }
+ //显示最热门图书
+    void most_borrowed_books(book *head)
+    {
+        book *curr=head;
+        int max_times=0;
+        while(curr!=NULL)
+        {
+            if(curr->times>max_times)
+            {
+                max_times=curr->times;
+            }
+            curr=curr->next;
+        }
+        curr=head;
+        printf("最热门图书（被借阅次数: %d）:\n", max_times);
+        while(curr!=NULL)
+        {
+            if(curr->times==max_times)
+            {
+                printf("——————————————————————————————————————————————————————————————————————————————\n");
+                printf("|书名: %s\n|ISBN: %s\n|作者: %s\n|分类: %d\n|被借阅次数: %d\n|出版日期: %d\n|出版社: %s\n",
+                    curr->name, curr->isbn, curr->author, curr->category, curr->times, curr->publish_date, curr->publisher);
+            }
+            curr=curr->next;
+        }
+    }
+    //显示最冷门图书
+    void least_borrowed_books(book *head)
+    {
+        book *curr=head;
+        int min_times=1e9;
+        while(curr!=NULL)
+        {
+            if(curr->times<min_times)
+            {
+                min_times=curr->times;
+            }
+            curr=curr->next;
+        }
+        curr=head;
+        printf("最冷门图书（被借阅次数: %d）:\n", min_times);
+        while(curr!=NULL)
+        {
+            if(curr->times==min_times)
+            {
+                printf("——————————————————————————————————————————————————————————————————————————————\n");
+                printf("|书名: %s\n|ISBN: %s\n|作者: %s\n|分类: %d\n|被借阅次数: %d\n|出版日期: %d\n|出版社: %s\n",
+                    curr->name, curr->isbn, curr->author, curr->category, curr->times, curr->publish_date, curr->publisher);
+            }
+            curr=curr->next;
+        }
+    }
+    void others(book *head,history *history_head)//其他功能封装************************************************************************************用这个
+    {
+        printf(" ========其他功能========\n");
+        printf("||1.显示所有逾期未还图书 ||\n");
+        printf("||2.显示最热门图书      ||\n");
+        printf("||3.显示最冷门图书      ||\n");
+        printf("||4:查询用户罚款        ||\n");
+        printf(" ======================\n");
+        printf("请输入:\n");
+        int mode;
+        if (scanf("%d", &mode) != 1)
+        {
+            printf("输入无效，取消操作\n");
+            while(getchar() != '\n');
+            return;
+        }
+        if(mode<1||mode>4)
+        {
+            printf("输入无效，取消操作\n");
+            while(getchar() != '\n');
+            return;
+        }
+        if(mode==1)
+        {
+            books_overdue(history_head);
+        }
+        if(mode==2)
+        {
+            most_borrowed_books(head);
+        }
+        if(mode==3)
+        {
+            least_borrowed_books(head);
+        }
+        if(mode==4)
+        {
+            char username[50];
+            printf("请输入用户名:\n");
+            scanf("%49s", username);
+            calculate_fine(history_head,username);
+        }
+    }
+    //修改图书信息=====================================================================================================================================================
+    void change_book_name(book *head,history *hist_head,char* isbn,const char* new_name)//更改图书名称
+    {
+    book *curr=head;
+    history *hist_curr=hist_head;
+    while(curr!=NULL)
+    {
+        if(strcmp(curr->isbn,isbn)==0)
+        {
+            strcpy(curr->name,new_name);
+            printf("已将ISBN为 '%s' 的图书名称更改为 '%s'。\n", isbn, new_name);
+            return;
+        }
+        curr=curr->next;
+    }
+    while(hist_curr!=NULL)
+    {
+        if(strcmp(hist_curr->isbn,isbn)==0)
+        {
+            strcpy(hist_curr->bookname,new_name);
+        }
+        hist_curr=hist_curr->next;
+    }
+    printf("未找到ISBN为 '%s' 的图书，无法更改名称。\n", isbn);
+    }
+void change_book_isbn(book *head,history *hist_head,char* isbn,const char* new_isbn)//更改图书ISBN
+{
+    book *curr=head;
+    history *hist_curr=hist_head;
+    while(curr!=NULL)
+    {
+        if(strcmp(curr->isbn,isbn)==0)
+        {
+            strcpy(curr->isbn,new_isbn);
+            printf("已将ISBN为 '%s' 的图书ISBN更改为 '%s'。\n", isbn, new_isbn);
+            return;
+        }
+        curr=curr->next;
+    }
+    while(hist_curr!=NULL)
+    {
+        if(strcmp(hist_curr->isbn,isbn)==0)
+        {
+            strcpy(hist_curr->isbn,new_isbn);
+        }
+        hist_curr=hist_curr->next;
+    }
+    printf("未找到ISBN为 '%s' 的图书，无法更改ISBN。\n", isbn);
+}
+void change_book_author(book *head,char* isbn,const char* new_author)//更改图书作者
+{
+    book *curr=head;
+    while(curr!=NULL)
+    {
+        if(strcmp(curr->isbn,isbn)==0)
+        {
+            strcpy(curr->author,new_author);
+            printf("已将ISBN为 '%s' 的图书作者更改为 '%s'。\n", isbn, new_author);
+            return;
+        }
+        curr=curr->next;
+    }
+    printf("未找到ISBN为 '%s' 的图书，无法更改作者。\n", isbn);
+}
+void change_book_publisher(book *head,char* isbn,const char* new_publisher)//更改图书出版社
+{
+    book *curr=head;
+    while(curr!=NULL)
+    {
+        if(strcmp(curr->isbn,isbn)==0)
+        {
+            strcpy(curr->publisher,new_publisher);
+            printf("已将ISBN为 '%s' 的图书出版社更改为 '%s'。\n", isbn, new_publisher);
+            return;
+        }
+        curr=curr->next;
+    }
+    printf("未找到ISBN为 '%s' 的图书，无法更改出版社。\n", isbn);
+}
+void change_book_data(book *head,history * hist_head,int *list)//封装图书修改函数
+{
+    printf(" ========修改图书信息========\n");
+    printf("||1.修改某种类最长借阅天数  ||\n");
+    printf("||2.修改图书种类            ||\n");
+    printf("||3.修改图书名称            ||\n");
+    printf("||4.修改图书ISBN            ||\n");
+    printf("||5.修改图书作者            ||\n");
+    printf("||6.修改图书出版社          ||\n");
+    printf("||7.增加图书                ||\n");
+    printf("||8.删除图书                ||\n");
+    printf(" ===========================\n");
+    int mode;
+    scanf("%d", &mode);
+    if(mode<1||mode>8)
+    {
+        printf("输入无效，取消修改\n");
+        while(getchar() != '\n');
+        return;
+    }
+    if(mode==1)
+    {
+        int category;
+        int new_days;
+        printf("图书分类:\n0:人文社科类\n1:自然科学类\n2:工程技术类\n3:医药卫生类\n4:综合图书类\n");
+        printf("请输入要修改的图书分类(整数):\n");
+        scanf("%d", &category);
+        printf("请输入新的最长借阅天数(整数):\n");
+        scanf("%d", &new_days);
+        if(category>=0&&category<5)
+        {
+            list[category]=new_days;
+            if(category==0)
+            {
+                printf("已将分类为人文社科的最长借阅天数更改为 '%d' 天。\n",new_days);
+            }
+            else if(category==1)
+            {
+                printf("已将分类为自然科学的最长借阅天数更改为 '%d' 天。\n",new_days);
+            }
+            else if(category==2)
+            {
+                printf("已将分类为工程技术的最长借阅天数更改为 '%d' 天。\n",new_days);
+            }
+            else if(category==3)
+            {
+                printf("已将分类为医药卫生的最长借阅天数更改为 '%d' 天。\n",new_days);
+            }
+            else if(category==4)
+            {
+                printf("已将分类为综合图书的最长借阅天数更改为 '%d' 天。\n",new_days);
+            }
+        }
+        else
+        {
+            printf("无效的分类，取消修改\n");
+        }
+    }
+    if(mode==2)
+    {
+        char isbn[50];
+        int new_category;
+        printf("请输入要修改的图书ISBN:\n");
+        scanf("%49s", isbn);
+        printf("图书分类:\n0:人文社科类\n1:自然科学类\n2:工程技术类\n3:医药卫生类\n4:综合图书类\n");
+        printf("请输入新的图书分类(整数):\n");
+        scanf("%d", &new_category);
+        if(new_category>=0&&new_category<5)
+        {
+            book *curr=head;
+            while(curr!=NULL)
+            {
+                if(strcmp(curr->isbn,isbn)==0)
+                {
+                    curr->category=new_category;
+                    if(new_category==0)
+                    {
+                        printf("已将ISBN为 '%s' 的图书分类更改为人文社科类。\n", isbn);
+                    }
+                    else if(new_category==1)
+                    {
+                        printf("已将ISBN为 '%s' 的图书分类更改为自然科学类。\n", isbn);
+                    }
+                    else if(new_category==2)
+                    {
+                        printf("已将ISBN为 '%s' 的图书分类更改为工程技术类。\n", isbn);
+                    }
+                    else if(new_category==3)
+                    {
+                        printf("已将ISBN为 '%s' 的图书分类更改为医药卫生类。\n", isbn);
+                    }
+                    else if(new_category==4)
+                    {
+                        printf("已将ISBN为 '%s' 的图书分类更改为综合图书类。\n", isbn);
+                    }
+                    return;
+                }
+                curr=curr->next;
+            }
+            printf("未找到ISBN为 '%s' 的图书，无法更改分类。\n", isbn);
+        }
+        else
+        {
+            printf("无效的分类，取消修改\n");
+        }
+    }
+    if(mode==3)
+    {
+        char isbn[50];
+        char new_name[50];
+        printf("请输入要修改的图书ISBN:\n");
+        scanf("%49s", isbn);
+        printf("请输入新的图书名称:\n");
+        scanf("%49s", new_name);
+        change_book_name(head,hist_head,isbn,new_name);
+    }
+    if(mode==4)
+    {
+        char isbn[50];
+        char new_isbn[50];
+        printf("请输入要修改的图书ISBN:\n");
+        scanf("%49s", isbn);
+        printf("请输入新的图书ISBN:\n");
+        scanf("%49s", new_isbn);
+        change_book_isbn(head,hist_head,isbn,new_isbn);
+    }
+    if(mode==5)
+    {
+        char isbn[50];
+        char new_author[50];
+        printf("请输入要修改的图书ISBN:\n");
+        scanf("%49s", isbn);
+        printf("请输入新的图书作者:\n");
+        scanf("%49s", new_author);
+        change_book_author(head,isbn,new_author);
+    }
+    if(mode==6)
+    {
+        char isbn[50];
+        char new_publisher[50];
+        printf("请输入要修改的图书ISBN:\n");
+        scanf("%49s", isbn);
+        printf("请输入新的图书出版社:\n");
+        scanf("%49s", new_publisher);
+        change_book_publisher(head,isbn,new_publisher);
+    }
+    if(mode==7)
+    {
+        add_book(head);
+    }
+    if(mode==8)
+    {
+        delete_book(&head);
     }
 }

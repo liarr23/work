@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\liar\desktop\work\task\main.cpp
+	<iostream>
+
+1774450442 source:c:\users\liar\desktop\work\2026\2026.3\3.25\main.cpp
+	<bits/stdc++.h>
+	"classdef.h"
+
+1774450413 c:\users\liar\desktop\work\2026\2026.3\3.25\classdef.h
+	<bits/stdc++.h>
+
