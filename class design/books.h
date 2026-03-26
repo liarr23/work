@@ -95,4 +95,7 @@ history *load_history_txt();
 int save_history_txt(history *head);
 void print_book(book *head);//打印图书信息
 void print_history(history *head);//打印历史记录信息
+void free_books(book *head);
+void free_users(user *head);
+void free_history(history *head);
 #endif // BOOKS_H_INCLUDED
